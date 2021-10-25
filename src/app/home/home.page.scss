@@ -1,27 +1,93 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --background-color: #121212;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+.container {
+  font-family: 'bold';
+  height: 100%;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  ion-input {
+    background: none;
+    border: none;
+    height: 2rem;
+    color: #ffffff;
+    margin-left: 1px;
+    margin-top: 1px;
+    width: 80%;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
 
-  color: #8c8c8c;
+  ion-icon {
+    font-size: 25px;
+  }
 
-  margin: 0;
-}
+  .add-button {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    background: none;
 
-#container a {
-  text-decoration: none;
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+
+  .list {
+    background-color: #121212;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 45px 17px;
+    color: #ffffff;
+
+    ion-list {
+      padding: 5px;
+      height: 40px;
+      background-color: #121212;
+      margin-top: 5px;
+      font-size: 1.3rem;
+
+      .item {
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #808080;
+        justify-content: space-between;
+        height: 40px;
+        background-color: #121212;
+
+        ion-checkbox {
+          --border-radius: 100%;
+          background-color: #121212;
+        }
+
+        .edit-input {
+          border-radius: 3px;
+          border: 1px solid #ffffff;
+          color: #ffffff;
+          width: 50%;
+        }
+
+        .edit-button {
+          height: 22px;
+          font-size: 0.8rem;
+          padding: 5px;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    .done {
+      text-decoration: line-through !important;
+    }
+
+
+    p {
+      margin-top: 1%;
+    }
+
+  }
+
 }

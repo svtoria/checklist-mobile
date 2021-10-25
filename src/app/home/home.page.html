@@ -1,3 +1,36 @@
 <ion-content [fullscreen]="true">
+  <div class="container">
+    <app-header></app-header>
+
+    <div class="list">
+      <h1>Checklist</h1>
+
+      <ion-input autofocus placeholder="Anote algo..." (keyup.enter)="addNote()" [(ngModel)]="titleInput" type="text">
+      </ion-input>
+      <button class="add-button" (click)="addNote()">
+        <ion-icon name="add-outline"></ion-icon>
+      </button>
+
+      <ion-list *ngFor="let note of notes; let i = index">
+
+        <div class="item">
+
+          <ion-checkbox color="warning" [(ngModel)]="note.done"></ion-checkbox>
+
+          <ion-label [class.done]="note.done">
+            {{note.title}}
+          </ion-label>
+
+          <button class="edit-button" (click)="editNote(note, i)">
+            {{note.editMode ? 'Salvar' : 'Editar'}}</button>
+          <ion-input class="edit-input" type="text" *ngIf="note.editMode" [(ngModel)]="newInput"></ion-input>
+          <ion-icon name="trash-outline" (click)="deleteNote(i)"></ion-icon>
+
+        </div>
+      </ion-list>
+
+    </div>
+
+  </div>
 
 </ion-content>
